@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog2Parcial1Rotiseria", "Prog2Parcial1Rotiseria\Prog2Parcial1Rotiseria.csproj", "{9E50591B-84ED-4DCA-8F3E-D8A64AF1109E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E50591B-84ED-4DCA-8F3E-D8A64AF1109E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E50591B-84ED-4DCA-8F3E-D8A64AF1109E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E50591B-84ED-4DCA-8F3E-D8A64AF1109E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E50591B-84ED-4DCA-8F3E-D8A64AF1109E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {257F795F-07A5-4132-88EF-632A9A8BABF4}
+	EndGlobalSection
+EndGlobal
