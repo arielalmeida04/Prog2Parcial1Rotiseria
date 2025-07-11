@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace Prog2Parcial1Rotiseria
 {
-    internal class Delivery:Pedido
+    internal class Delivery : Pedido
     {
         double distancia = 0;
-        public Delivery(double distancia,int numero, string cliente):base(cliente,numero) 
+        public Delivery(double distancia, int numero, string cliente) : base(cliente, numero)
         {
             this.distancia = distancia;
         }
-        public double Precio()
+        public override double Precio()
         {
-            return precio+(precio*distancia*0.08)+150;
+            this.precio = base.PrecioSinDescuento();
+            double precioAnashe = this.precio + (this.precio * distancia * 0.08) + 150;
+            return precioAnashe;
         }
-    
+
     }
 }

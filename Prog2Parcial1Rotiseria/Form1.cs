@@ -16,7 +16,7 @@ namespace Prog2Parcial1Rotiseria
     {
         Rotiseria roti = new Rotiseria();
         Pedido tipoDePedido;
-
+        int totalpedidos = 0;
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +28,12 @@ namespace Prog2Parcial1Rotiseria
 
         private void bttTomarPedido_Click(object sender, EventArgs e)
         {
-            int totalpedidos = 1;
+            
             TomarPedido tp = new TomarPedido();
-           while (tp.ShowDialog() == DialogResult.OK) 
-            { 
+           if (tp.ShowDialog() == DialogResult.OK) 
+            {
+
+                totalpedidos++;
                 string nombre  = tp.txbCliente.Text;
                 if (tp.cbDelivery.Checked)
                 {
@@ -39,16 +41,15 @@ namespace Prog2Parcial1Rotiseria
                     double km = Convert.ToDouble(tp.txbkm.Text);
                     tipoDePedido = new Delivery(km, totalpedidos, nombre);
                     roti.AgregarPedido(tipoDePedido);
-                    totalpedidos++;
+                    
 
                 }
                 else
                 {
                     tipoDePedido = new Pedido(nombre, totalpedidos);
                     roti.AgregarPedido(tipoDePedido);
-                    totalpedidos++;
+                    
                 }
-
             }
             tp.Dispose();
         }
@@ -63,7 +64,9 @@ namespace Prog2Parcial1Rotiseria
 
         private void bttCerrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Precio Final: "+roti.totalRecudado);
+            Pedido pedilo = roti.VerPedido(totalpedidos);
+
+            MessageBox.Show("Precio Final: " + pedilo.Precio());
             lBpedido.Items.Clear();
             roti.Ordenar();
             foreach (Pedido item in roti.ObtenerLista())

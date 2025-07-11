@@ -31,6 +31,9 @@ namespace Prog2Parcial1Rotiseria
         {
             return pepe;
         }
+
+     
+
         public Pedido VerPedido(int i)
         {
             foreach (Pedido item in pepe)

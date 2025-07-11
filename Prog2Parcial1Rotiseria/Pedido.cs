@@ -10,44 +10,56 @@ namespace Prog2Parcial1Rotiseria
     {
         string cliente;
         public readonly int Numero;
-
         protected double precio;
 
         List<ItemMenu> items = new List<ItemMenu>();
-        public Pedido(string cliente,int numero)
+        public Pedido(string cliente, int numero)
         {
             this.cliente = cliente;
             this.Numero = numero;
         }
-   
-        public double Precio()
+
+        public virtual double Precio()
         {
             foreach (ItemMenu item in items)
             {
                 precio += item.precio;
-                
             }
+
             if (precio > 2000)
             {
                 double descuento = precio * .05;
                 precio -= descuento;
             }
+
             return precio;
         }
         public void AgregarItem(ItemMenu menu, int cantidad)
         {
-            if (menu != null) 
+            if (menu != null)
             {
-               double menucito = menu.precio * cantidad;
-                menu.precio=menucito;
+                double menucito = menu.precio * cantidad;
+                menu.precio = menucito;
 
                 items.Add(menu);
             }
-            
+
         }
+
+        public double PrecioSinDescuento()
+        {
+            foreach (ItemMenu item in items)
+            {
+                precio += item.precio;
+
+            }
+
+            return precio;
+        }
+
         public override string ToString()
         {
-            return cliente+"  numero de pedido: "+Numero;
+            return cliente + "  numero de pedido: " + Numero;
         }
 
         public int CompareTo(Pedido other)
